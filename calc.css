@@ -1,0 +1,187 @@
+:root {
+  --main-background: #e8e8e8;
+  --operator-background: #f0f0f0;
+  --operand-background: #ffffff;
+  --operator-hover: #808080;
+  --operand-hover: #d3d3d3;
+  --function-change-btns-background: #9ac2dd;
+}
+* {
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 0px;
+  margin: 0px;
+}
+.container {
+  display: flex;
+  justify-content: center;
+}
+.outer-body {
+  justify-content: center;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--main-background);
+  padding: 5px;
+  font-size: 14px;
+  margin-top: 15px;
+  box-shadow: 0px 8px 8px 0px rgba(0, 0, 0, 0.5);
+}
+/* Display: Screen & History*/
+.display {
+  margin-bottom: 15px;
+}
+.display .screen {
+  border: none;
+  width: 100%;
+  font-size: 40px;
+  font-weight: 500px;
+  text-align: right;
+  background-color: var(--main-background);
+}
+.display .history {
+  border: none;
+  width: 100%;
+  font-size: 20px;
+  font-weight: 500px;
+  text-align: right;
+  margin-bottom: 5px;
+  background-color: var(--main-background);
+  color: rgba(44, 43, 43, 0.981);
+}
+@media (max-width: 370px) {
+  .display .screen {
+    font-size: 35px;
+  }
+  .display .history {
+    font-size: 15px;
+  }
+}
+/* onclick animation for button*/
+button:active {
+  transform: translateY(4px);
+}
+button {
+  transition-duration: 0.3s;
+}
+/* Deg & FE*/
+.top-row {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+.top-row button {
+  padding: 7px 12px;
+  width: 20%;
+  border: none;
+  margin: 1px 1.5px 1px 0px;
+  justify-content: center;
+  background-color: var(--main-background);
+}
+/* Memory Functions*/
+.memory-functions {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 1px 0px;
+}
+.memory-functions button {
+  width: 20%;
+  padding: 7px 12px;
+  border: none;
+  background-color: var(--main-background);
+}
+/* Dropdown for trigonometric & functions */
+.selection {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.selection button {
+  padding: 7px 12px;
+  border: none;
+  margin: 1px 1.5px 1px 0px;
+  background-color: var(--main-background);
+}
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+.drop-btn {
+  transition-duration: 0.3s;
+  padding: 7px 12px;
+  border: none;
+  margin: 1px 1.6px 1px 0px;
+  background-color: var(--main-background);
+  cursor: pointer;
+}
+.drop-btn:hover {
+  background-color: var(--operator-hover);
+}
+.drop-btn .drop-btn-image {
+  width: 18px;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: var(--operand-background);
+  min-width: 190px;
+  box-shadow: 0px 8px 10px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+.dropdown-content button {
+  padding: 7px 12px;
+  text-decoration: none;
+  display: block;
+}
+.dropdown-content .function-list, .trigonometry-list {
+  display: grid;
+  grid-template-columns: auto auto auto;
+}
+.dropdown-content button:hover {
+  background-color: var(--operator-hover);
+}
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+@media (max-width: 350px) {
+  .calc-function-dropdown {
+    right: 0;
+  }
+}
+/* Function-container  */
+.calc-function-container {
+  display: grid;
+  grid-template-columns: 20% 20% 20% 20% 20%;
+  background-color: var(--main-background);
+}
+.calc-function-container button {
+  padding: 7px 12px;
+  height: 40px;
+  margin: 1px;
+  border: none;
+  background-color: var(--operator-background);
+}
+.calc-function-container .operand {
+  background-color: var(--operand-background);
+  font-size: 16px;
+  font-weight: bold;
+}
+.calc-function-container .operand:hover {
+  background-color: var(--operand-hover);
+}
+.calc-function-container .operator {
+  font-size: 20px;
+  padding: 7px 12px;
+}
+.calc-function-container .equal-btn {
+  background-color: rgb(154, 194, 221);
+}
+.calc-function-container .equal-btn:hover {
+  background-color: rgb(98, 165, 209);
+  font-weight: bolder;
+}
+/* button hover style*/
+button:hover {
+  background-color: var(--operator-hover);
+}
